@@ -52,7 +52,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="nav-link text-gray-600 font-medium">About</a>
                 <a href="#features" class="nav-link text-gray-600 font-medium">Features</a>
-                <!--<a href="#agriculture-numbers" class="nav-link text-gray-600 font-medium">Numbers</a>-->
+                <a href="#community-page" class="nav-link text-gray-600 font-medium">Community</a>
                 <a href="#market-analysis-page" class="nav-link text-gray-600 font-medium">Market Analysis</a>
                 <a href="#weather-advice-page" class="nav-link text-gray-600 font-medium">Weather Advice</a>
                 <a href="#register" class="nav-link text-gray-600 font-medium">Register</a>
@@ -68,7 +68,7 @@
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#about" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">About</a>
             <a href="#features" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Features</a>
-            <!--<a href="#agriculture-numbers" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Numbers</a>-->
+            <a href="#community-page" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Community</a>
             <a href="#market-analysis-page" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Market Analysis</a>
             <a href="#weather-advice-page" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Weather Advice</a>
             <a href="#register" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Register</a>
@@ -217,6 +217,34 @@
             </div>
         </div>
     </section>-->
+    <section id="community-page" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Farmer's Community Board</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">
+            Share your thoughts, farming tips, and ideas with fellow farmers.
+        </p>
+
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto mb-8">
+            <form id="community-post-form" class="space-y-4">
+                <div>
+                    <label for="post-name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                    <input type="text" id="post-name" name="post-name" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                </div>
+                <div>
+                    <label for="post-message" class="block text-sm font-medium text-gray-700">Your Thought or Idea</label>
+                    <textarea id="post-message" name="post-message" rows="4" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md shadow-lg transition duration-300 transform hover:scale-105">
+                    Share My Thought
+                </button>
+            </form>
+        </div>
+
+        <div id="posts-container" class="space-y-6 max-w-xl mx-auto">
+            </div>
+
+    </div>
+</section>    
 
     <section id="market-analysis-page" class="py-16">
         <div class="container mx-auto px-6">
@@ -495,6 +523,60 @@
             // Initial data fetch
             fetchMarketData();
         });
+    </script>
+    <script>
+        // Community board logic
+const communityPostForm = document.getElementById('community-post-form');
+const postsContainer = document.getElementById('posts-container');
+
+// A simple way to store posts so they persist on page refresh
+let posts = JSON.parse(localStorage.getItem('communityPosts')) || [];
+
+function renderPosts() {
+    postsContainer.innerHTML = '';
+    posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.className = 'p-6 bg-white rounded-xl shadow-md card';
+        postDiv.innerHTML = `
+            <div class="flex items-center space-x-3 mb-2">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">
+                    ${post.name.charAt(0).toUpperCase()}
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-800">${post.name}</h4>
+                    <span class="text-sm text-gray-500">${new Date(post.timestamp).toLocaleString()}</span>
+                </div>
+            </div>
+            <p class="text-gray-700">${post.message}</p>
+        `;
+        postsContainer.prepend(postDiv); // Add new post to the top
+    });
+}
+
+communityPostForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('post-name').value.trim();
+    const message = document.getElementById('post-message').value.trim();
+
+    if (name && message) {
+        const newPost = {
+            name: name,
+            message: message,
+            timestamp: new Date().toISOString()
+        };
+
+        posts.push(newPost);
+        localStorage.setItem('communityPosts', JSON.stringify(posts)); // Save to local storage
+        
+        renderPosts(); // Update the displayed posts
+
+        communityPostForm.reset(); // Clear the form
+    }
+});
+
+// Call renderPosts on page load to display any existing posts
+renderPosts();
     </script>
 </body>
 </html>
