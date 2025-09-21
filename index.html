@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Assist: A Digital Solution for Farmers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .bg-pattern {
+            background-image: url('https://placehold.co/1920x1080/EAEAEA/EAEAEA?text=');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-kerala-image {
+            background-image: url('https://placehold.co/1920x1080/4CAF50/FFFFFF?text=Inspired+by+Kerala');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4CAF50;
+            transform: translateY(-2px);
+        }
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .spinner-border {
+            border: 4px solid currentColor;
+            border-right-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">Agri-Assist</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-600 font-medium">About</a>
+                <a href="#features" class="nav-link text-gray-600 font-medium">Features</a>
+                <a href="#agriculture-numbers" class="nav-link text-gray-600 font-medium">Numbers</a>
+                <a href="#market-analysis-page" class="nav-link text-gray-600 font-medium">Market Analysis</a>
+                <a href="#weather-advice-page" class="nav-link text-gray-600 font-medium">Weather Advice</a>
+                <a href="#register" class="nav-link text-gray-600 font-medium">Register</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#features" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Features</a>
+            <a href="#agriculture-numbers" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Numbers</a>
+            <a href="#market-analysis-page" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Market Analysis</a>
+            <a href="#weather-advice-page" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Weather Advice</a>
+            <a href="#register" class="block py-2 px-4 text-gray-600 hover:bg-gray-100">Register</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative overflow-hidden bg-white py-16 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    A Digital Companion for Your Modern Farming
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8">
+                    Agri-Assist provides smart, data-driven solutions to help farmers thrive.
+                </p>
+                <a href="#register" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Get Started
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/4CAF50/FFFFFF?text=Agri-Assist+Hero+Image" alt="Agri-Assist Hero Image" class="rounded-2xl shadow-xl transform transition-transform duration-500 hover:scale-105">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Agri-Assist</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                Agri-Assist is an all-in-one platform designed to empower farmers with the information and tools needed to increase productivity, reduce costs, and improve their livelihood. We are committed to building a sustainable agricultural future.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-6 bg-white rounded-xl text-center">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Empowering Farmers</h3>
+                    <p class="text-gray-600">Our mission is to bridge the gap between technology and traditional farming, providing actionable insights for all farmers.</p>
+                </div>
+                <div class="card p-6 bg-white rounded-xl text-center">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Powerful Features</h3>
+                    <p class="text-gray-600">From soil analysis and crop planning to market insights, our app provides everything you need to succeed.</p>
+                </div>
+                <div class="card p-6 bg-white rounded-xl text-center">
+                    <h3 class="font-bold text-xl text-gray-800 mb-2">Real-World Impact</h3>
+                    <p class="text-gray-600">We believe in creating solutions that have a tangible, positive impact on the lives of farmers and their communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Key Features of the App</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Farmer Registration</h3>
+                        <p class="text-gray-600">An easy form to onboard farmers with details like age, location, and land size.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16 12a4 4 0 01-8 0v-2a4 4 0 018 0v2zm-8 1a1 1 0 001 1h2a1 1 0 100-2H9a1 1 0 00-1 1zm8-8a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            <path fill-rule="evenodd" d="M2 13a1 1 0 011-1h2a1 1 0 110 2H3a1 1 0 01-1-1zm14 0a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zm-8-2a1 1 0 110-2h4a1 1 0 110 2h-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Soil Analysis</h3>
+                        <p class="text-gray-600">Upload images for instant soil type, moisture, and nutrient analysis.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M12 7V4a2 2 0 00-2-2H8a2 2 0 00-2 2v3H4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2zm-2 5a2 2 0 100-4 2 2 0 000 4z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Subsidies & Loans</h3>
+                        <p class="text-gray-600">Match farmers with relevant government subsidies and suggest loan options.</p>
+                    </div>
+                </div>
+                
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM6 10a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2zm4 0a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2zm4 0a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Weather & Crop Advice</h3>
+                        <p class="text-gray-600">Get timely advice on irrigation and crop management based on your local weather.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M12 11h2v3h-2v-3zm-6 0h2v3H6v-3zM8 2a2 2 0 00-2 2v2H4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-2V4a2 2 0 00-2-2h-4z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Crop Selection</h3>
+                        <p class="text-gray-600">Intelligent recommendations for crop varieties and seeds based on soil and weather data.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-xl flex items-start space-x-4">
+                    <div class="w-12 h-12 flex-shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM6 10a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2zm4 0a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2zm4 0a1 1 0 011-1h.5a1 1 0 011 1v2a1 1 0 01-1 1h-.5a1 1 0 01-1-1v-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Water & Irrigation</h3>
+                        <p class="text-gray-600">Guidance on water requirements and efficient irrigation methods like drip irrigation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agriculture-numbers" class="py-16 bg-green-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Agriculture in Numbers</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-green-700 p-8 rounded-xl card">
+                    <h3 class="text-4xl font-extrabold mb-2">10.5 M</h3>
+                    <p class="text-lg">Farmers Registered</p>
+                </div>
+                <div class="bg-green-700 p-8 rounded-xl card">
+                    <h3 class="text-4xl font-extrabold mb-2">2.8 M</h3>
+                    <p class="text-lg">Acres under cultivation</p>
+                </div>
+                <div class="bg-green-700 p-8 rounded-xl card">
+                    <h3 class="text-4xl font-extrabold mb-2">350K TONS</h3>
+                    <p class="text-lg">Total food produced</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="market-analysis-page" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Market Analysis</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
+                <p class="text-sm text-gray-600 mb-4 text-center">
+                    This is a simplified view. Data is fetched from your backend API. Prices are in ₹ per kg, unless otherwise specified.
+                </p>
+                <div id="market-data" class="space-y-4">
+                    <div class="text-center text-gray-500">Market data is loading...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather-advice-page" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Weather-Based Crop Advice</h2>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
+                <p class="text-center text-gray-600 mb-4">
+                    Get tailored advice for your farm based on your local weather, or search a specific location.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <input type="text" id="weather-location-input" placeholder="Enter your place" class="w-full md:w-auto flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-300">
+                    <button id="get-weather-advice-btn" class="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                        Get Weather
+                    </button>
+                </div>
+                <div id="weather-advice-message" class="mt-6 p-4 rounded-md text-left hidden">
+                    </div>
+                <div id="loading-indicator" class="flex justify-center items-center hidden mt-6">
+                    <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-green-500" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join the Agri-Assist Community</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Fill out the form below to get started and unlock the power of modern farming.
+            </p>
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-xl mx-auto">
+                <form id="registration-form">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="name" class="block text-left text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label for="age" class="block text-left text-sm font-medium text-gray-700">Age</label>
+                            <input type="number" id="age" name="age" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label for="phone" class="block text-left text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="acres" class="block text-left text-sm font-medium text-gray-700">Acres of Land</label>
+                            <input type="number" id="acres" name="acres" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="place" class="block text-left text-sm font-medium text-gray-700">Place</label>
+                            <input type="text" id="place" name="place" class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md shadow-lg transition duration-300 transform hover:scale-105">
+                            Register
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Agri-Assist. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white p-6 rounded-lg shadow-xl text-center max-w-sm w-full">
+            <p id="modal-message" class="text-gray-800 text-lg font-semibold mb-4"></p>
+            <button id="modal-close-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md">
+                OK
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const registrationForm = document.getElementById('registration-form');
+            const modal = document.getElementById('modal');
+            const modalMessage = document.getElementById('modal-message');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const marketDataContainer = document.getElementById('market-data');
+            const getWeatherAdviceBtn = document.getElementById('get-weather-advice-btn');
+            const weatherAdviceMessage = document.getElementById('weather-advice-message');
+            const weatherLocationInput = document.getElementById('weather-location-input');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            // Function to show a custom modal message
+            function showModal(message) {
+                modalMessage.textContent = message;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+
+            // Close modal event listener
+            modalCloseBtn.addEventListener('click', () => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            });
+
+            // Mobile menu toggle
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Registration form submission handler
+            registrationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(registrationForm);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    // Send data to the backend API
+                    const response = await fetch('http://localhost:3000/api/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+                    showModal(result.message); // Show success message from the backend
+                    registrationForm.reset(); // Reset the form
+                } catch (error) {
+                    console.error('Registration failed:', error);
+                    showModal('Registration failed. Please try again.');
+                }
+            });
+
+            // Function to render the market data
+            function renderMarketData(data) {
+                marketDataContainer.innerHTML = ''; // Clear previous data
+                if (data.length === 0) {
+                    marketDataContainer.innerHTML = '<p class="text-center text-gray-500">Market data not available.</p>';
+                    return;
+                }
+                data.forEach(item => {
+                    const priceItem = document.createElement('div');
+                    priceItem.className = 'flex justify-between items-center bg-gray-100 p-4 rounded-lg';
+                    if (item.name.includes('Land Price')) {
+                        priceItem.innerHTML = `
+                            <span class="text-lg font-medium text-gray-800">${item.name}</span>
+                            <span class="text-lg font-bold text-green-600">₹${item.price.toFixed(0)} / sq. ft.</span>
+                        `;
+                    } else {
+                        priceItem.innerHTML = `
+                            <span class="text-lg font-medium text-gray-800">${item.name}</span>
+                            <span class="text-lg font-bold text-green-600">₹${item.price.toFixed(2)} / kg</span>
+                        `;
+                    }
+                    
+                    marketDataContainer.appendChild(priceItem);
+                });
+            }
+
+            // Function to fetch market data from the backend API
+            async function fetchMarketData() {
+                marketDataContainer.innerHTML = '<p class="text-center text-gray-500">Market data is loading...</p>';
+
+                try {
+                    // Mock data to simulate an API call
+                    const mockData = [
+                        { name: 'Tomatoes', price: 25.50 },
+                        { name: 'Potatoes', price: 18.00 },
+                        { name: 'Onions', price: 32.75 },
+                        { name: 'Apples', price: 150.00 },
+                        { name: 'Bananas', price: 45.00 },
+                        { name: 'Mangoes', price: 80.00 },
+                        { name: 'Land Price', price: 2500 },
+                    ];
+                    
+                    // Simulate network delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+
+                    renderMarketData(mockData);
+                } catch (error) {
+                    console.error('There was a problem fetching the market data:', error);
+                    marketDataContainer.innerHTML = '<p class="text-center text-red-500">Failed to load market data. Please ensure the backend server is running or check your connection.</p>';
+                }
+            }
+
+            // Event listener for the new "Get My Advice" button
+            getWeatherAdviceBtn.addEventListener('click', async () => {
+                const place = weatherLocationInput.value.trim();
+
+                if (!place) {
+                    weatherAdviceMessage.classList.remove('hidden');
+                    weatherAdviceMessage.className = 'mt-6 p-4 rounded-md text-left bg-red-100 text-red-600';
+                    weatherAdviceMessage.innerHTML = 'Please enter a location.';
+                    return;
+                }
+
+                weatherAdviceMessage.classList.add('hidden');
+                loadingIndicator.classList.remove('hidden');
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/weather-advice', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ place: place })
+                    });
+
+                    const result = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(result.message.summary);
+                    }
+
+                    weatherAdviceMessage.innerHTML = `
+                        <h3 class="font-bold text-xl mb-2 text-gray-900">${result.message.title}</h3>
+                        <p class="text-gray-700 mb-4">${result.message.summary}</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            ${result.message.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    `;
+                    weatherAdviceMessage.classList.remove('hidden');
+                    weatherAdviceMessage.className = 'mt-6 p-4 rounded-md text-left bg-green-100 text-green-700';
+
+                } catch (error) {
+                    console.error('Failed to get weather advice:', error);
+                    weatherAdviceMessage.innerHTML = `
+                        <h3 class="font-bold text-xl mb-2 text-red-700">Error</h3>
+                        <p class="text-red-600">${error.message}</p>
+                    `;
+                    weatherAdviceMessage.classList.remove('hidden');
+                    weatherAdviceMessage.className = 'mt-6 p-4 rounded-md text-left bg-red-100 text-red-600';
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                }
+            });
+
+            // Initial data fetch
+            fetchMarketData();
+        });
+    </script>
+</body>
+</html>
