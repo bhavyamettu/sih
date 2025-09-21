@@ -2,12 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // You would typically use environment variables for your API keys.
 // For this example, we'll keep them here.
-const OPENWEATHER_API_KEY = "555a5f738d3e53c813eba015a1f621e8"; // Make sure this key is correct and active
-const GEMINI_API_KEY = "AIzaSyDVwQgNgeEUlPqTDqn4cTHeRp0ODVdKdyE"; // Please replace this with your valid key
+
+
+const OPENWEATHER_API_KEY = process.env.OPENWEATHER_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const OPENWEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather";
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent";
